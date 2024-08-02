@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+	<style>
+		body {
+			background-image: url(https://hips.hearstapps.com/hmg-prod/images/types-of-doctors-1600114658.jpg?crop=1xw:0.8425829875518672xh;center,top&resize=1200:*);
+			background-size: cover;
+			font-family: Arial, sans-serif;
+				
+				            color: black;
+				            text-align: center;
+				            margin: 0;
+				            padding: 0;
+				            display: flex;
+				            justify-content: center;
+				            align-items: center;
+				            height: 100vh;
+			 }
+		 
+			 .form-group {
+			 	            margin-bottom: 20px;
+			 	        }
+						
+			.container {
+		            width: 600px;
+			        /* margin: auto;  */
+		            padding: 55px;
+                     background-color:#ffffff;
+				     border-radius: 5px;
+						}
+			input[type="password"],
+		    input[type="email"]
+							   {
+							    width: 90%;
+							     height: 30px;
+							      padding: 10px;
+							      border: none;
+							      border-radius: 5px;
+							      background-color: #ffff;
+							       color: #000000;
+							        }		
+						
+			input[type="submit"] {
+				background-color: red;
+			    width:50%;
+			    color: black;
+			   padding: 10px 20px;
+			    border: none;
+	            border-radius: 5px;
+				cursor: pointer;
+							        }	 
+	</style>
+</head>
+<body>
+    <div class="container">
+        <div class="message" th:if="${param.error}">
+           Invalid Username or Password
+        </div>
+        <div class="message" th:if="${param.logout}">
+           Logout Successfuly
+        </div>
+      
+        <h2> Login Here</h2>
+        <form 
+         th:action="@{/login}"
+         method="post"
+         
+        >
+            
+            
+            <div class="form-group">
+                <label for="username">Email:</label>
+                <input  type="email" id="username" name="username" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input  type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <input type="submit" value="Login">
+        </form>
+        
+    </div>
+</body>
+</html>

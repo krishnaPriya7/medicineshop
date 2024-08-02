@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add User</title>
+    <style>
+		body {
+		           background-image: url('https://png.pngtree.com/thumb_back/fh260/back_pic/03/58/87/6557a342a65732c.jpg');
+		           font-family: Arial, sans-serif;
+				   background-size: cover;
+		           margin: 0;
+		           padding: 20px;
+		           box-sizing: border-box;
+		       }
+		       h1 {
+		           color:#008080;
+		       }
+		       form {
+		           background-color: #ffffff;
+		           padding: 20px;
+		           margin-top: 20px;
+		           border-radius: 5px;
+		          
+		       }
+		       label {
+		           display: block;
+		           margin-bottom: 10px;
+		           color: #333333;
+		       }
+		       input[type="text"] {
+		           width: 100%;
+		           padding: 10px;
+		           margin-bottom: 20px;
+		           border: 1px solid #cccccc;
+		           border-radius: 5px;
+		           box-sizing: border-box;
+		       }
+		       button[type="submit"] {
+		           background-color: red;
+		           color: #000000;
+		           padding: 10px 20px;
+		           border: none;
+		           border-radius: 5px;
+		           cursor: pointer;
+		       }
+    </style>
+</head>
+<body>
+    <h1>Add New User</h1>
+    <form action="/add" method="post">
+        <label for="medicinename">Medicine Name:</label>
+        <input type="text" id="medicinename" name="medicinename"><br><br>
+        
+        <label for="medicinedetail">Medicine Detail:</label>
+        <input type="text" id="medicinedetail" name="medicinedetail"><br><br>
+        
+        <label for="price">Price:</label>
+        <input type="text" id="price" name="price"><br><br>
+        
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>

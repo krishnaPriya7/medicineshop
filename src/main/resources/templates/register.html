@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+	<style>
+		
+		
+		body {
+		    
+		            font-family: Arial, sans-serif;
+		            background-color:lightgreen;
+		            color: black;
+		            text-align: center;
+		            margin: 0;
+		            padding: 0;
+		            display: flex;
+		            justify-content: center;
+		            align-items: center;
+		            height: 100vh;
+		         
+		        }
+		
+		        .container {
+		            
+		            width: 600px;
+		            /* margin: auto;  */
+		            padding: 55px;
+		            background-color:#ffffff;
+		            border-radius: 5px;
+		           
+		        }
+		
+		        h2 {
+		            color: #000000;
+		        }
+		
+		        .form-group {
+		            margin-bottom: 20px;
+		        }
+		
+		        label {
+		            display: block;
+		            font-weight: bold;
+		            margin-bottom: 5px;
+		            text-align: left;
+		        }
+		
+		        input[type="text"],
+		        input[type="password"],
+		        input[type="email"]
+		        {
+		            width: 90%;
+		            height: 30px;
+		            padding: 10px;
+		            border: none;
+		            border-radius: 5px;
+		            background-color: #ffff;
+		            color: #000000;
+		        }
+		
+		        input[type="submit"] {
+		            background-color: red;
+		            width:50%;
+		            color: black;
+		            padding: 10px 20px;
+		            border: none;
+		            border-radius: 5px;
+		            cursor: pointer;
+		        }
+		
+		        .message {
+		            background-color: #f03e3e;
+		            color: white;
+		            padding: 10px;
+		            margin-top: 20px;
+		            border-radius: 5px;
+		        }
+		</style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="message" th:if="${message != null}">
+           [[${message}]]
+        </div>
+        <h2>User Registration</h2>
+        <form 
+         th:action="@{/registration}"
+         method="post"
+         role="form"
+         th:object="${user}"
+        >
+            <div class="form-group">
+                <label for="fullname">Fullname:</label>
+                <input th:field="*{fullname}" type="text" id="fullname" name="fullname" placeholder="Enter your fullname" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input th:field="*{email}" type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input th:field="*{password}" type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+        
+    </div>
+</body>
+</html>
